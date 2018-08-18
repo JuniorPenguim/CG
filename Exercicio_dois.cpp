@@ -110,7 +110,7 @@ void display_12(void)
    glEnd();
    
 
-      
+   // Desenhar gráfico senoidal em loop   
    for(float x = 0; x < 360; x = x + 30)
    {
       glBegin(GL_LINE_STRIP);
