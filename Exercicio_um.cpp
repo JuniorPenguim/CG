@@ -146,7 +146,7 @@ void displayVazioCheio(void)
 
    glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 
-   // Desenhar um triângulo vermelho cheio
+   // Desenhar um triângulo vermelho preenchido
    glBegin(GL_TRIANGLES);
 
       glColor3f (1.0, 0.0, 0.0);
