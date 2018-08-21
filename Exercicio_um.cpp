@@ -2,12 +2,10 @@
 #include <GL/glut.h>
 #include <stdlib.h>
 
-void displayCheio(void);
-void displayVazio(void);
-void displayVazioCheio(void);
-void displayPoligono(void);
+void display(void);
 void init (void);
 void keyboard(unsigned char key, int x, int y);
+char var;
 
 int main(int argc, char** argv)
 {
@@ -17,7 +15,7 @@ int main(int argc, char** argv)
    glutInitWindowPosition (100, 100);
    glutCreateWindow ("Exercicio 1 Test");
    init ();
-   glutDisplayFunc(displayCheio);
+   glutDisplayFunc(display);
    glutKeyboardFunc(keyboard);
    
    
@@ -34,192 +32,197 @@ int main(int argc, char** argv)
 
 // É a rotina chamada automaticamente sempre que a
 // janela ou parte dela precisa ser redesenhada
-void displayCheio(void)
+void display(void)
 {
+	switch(var)
+	{
+
+		case 'a':
+
+		glClear (GL_COLOR_BUFFER_BIT);
+
+    	// Desenhar a linha x do eixo
+    	glBegin(GL_LINES);
+
+      		glColor3f(0.0, 1.0, 0.0);
+      		glVertex3f(-1.0, 0.0, 0.0);
+      		glVertex3f(1.0, 0.0, 0.0);
+
+   		glEnd();
+
+   		// Desenhar a linha y do eixo
+   		glBegin(GL_LINES);
+
+      		glColor3f(0.0, 1.0, 0.0);
+      		glVertex3f(0.0, -1.0, 0.0);
+      		glVertex3f(0.0, 1.0, 0.0);
+
+   		glEnd();
 
 
-   // Limpar todos os pixels
-    glClear (GL_COLOR_BUFFER_BIT);
+   		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-    // Desenhar a linha x do eixo
-    glBegin(GL_LINES);
+   		// Desenhar um triângulo vermelho
+   		glBegin(GL_TRIANGLES);
 
-      glColor3f(0.0, 1.0, 0.0);
-      glVertex3f(-1.0, 0.0, 0.0);
-      glVertex3f(1.0, 0.0, 0.0);
-
-   glEnd();
-
-   // Desenhar a linha y do eixo
-   glBegin(GL_LINES);
-
-      glColor3f(0.0, 1.0, 0.0);
-      glVertex3f(0.0, -1.0, 0.0);
-      glVertex3f(0.0, 1.0, 0.0);
-
-   glEnd();
-
-   glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
-
-   // Desenhar um triângulo vermelho
-   glBegin(GL_TRIANGLES);
-
-      glColor3f (1.0, 0.0, 0.0);
-      glVertex3f (0.0, 0.0, 0.0);
-      glVertex3f (0.5, 0.0, 0.0);
-      glVertex3f (0.25, 0.5, 0.0);
+      		glColor3f (1.0, 0.0, 0.0);
+      		glVertex3f (0.0, 0.0, 0.0);
+      		glVertex3f (0.5, 0.0, 0.0);
+      		glVertex3f (0.25, 0.5, 0.0);
 
 
-   glEnd();
+   		glEnd();
 
    
-   glutSwapBuffers ();
-}
+   		glutSwapBuffers ();
+   		break;
 
-void displayVazio(void)
-{
+   		case 'b':
 
+   		// Limpar todos os pixels
+    	glClear (GL_COLOR_BUFFER_BIT);
 
-   // Limpar todos os pixels
-    glClear (GL_COLOR_BUFFER_BIT);
+    	// Desenhar a linha x do eixo
+    	glBegin(GL_LINES);
 
-    // Desenhar a linha x do eixo
-    glBegin(GL_LINES);
+      		glColor3f(0.0, 1.0, 0.0);
+      		glVertex3f(-1.0, 0.0, 0.0);
+      		glVertex3f(1.0, 0.0, 0.0);
 
-      glColor3f(0.0, 1.0, 0.0);
-      glVertex3f(-1.0, 0.0, 0.0);
-      glVertex3f(1.0, 0.0, 0.0);
+   		glEnd();
 
-   glEnd();
+   		// Desenhar a linha y do eixo
+   		glBegin(GL_LINES);
 
-   // Desenhar a linha y do eixo
-   glBegin(GL_LINES);
+      		glColor3f(0.0, 1.0, 0.0);
+      		glVertex3f(0.0, -1.0, 0.0);
+      		glVertex3f(0.0, 1.0, 0.0);
 
-      glColor3f(0.0, 1.0, 0.0);
-      glVertex3f(0.0, -1.0, 0.0);
-      glVertex3f(0.0, 1.0, 0.0);
+   		glEnd();
 
-   glEnd();
+   		glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 
+   		// Desenhar um triângulo vermelho
+   		glBegin(GL_TRIANGLES);
 
-   glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
-   // Desenhar um triângulo vermelho
-   glBegin(GL_TRIANGLES);
-
-      glColor3f (1.0, 0.0, 0.0);
-      glVertex3f (0.0, 0.0, 0.0);
-      glVertex3f (0.5, 0.0, 0.0);
-      glVertex3f (0.25, 0.5, 0.0);
+      		glColor3f (1.0, 0.0, 0.0);
+      		glVertex3f (0.0, 0.0, 0.0);
+      		glVertex3f (0.5, 0.0, 0.0);
+      		glVertex3f (0.25, 0.5, 0.0);
 
 
-   glEnd();
+   		glEnd();
 
    
-   glutSwapBuffers ();
-}
+   		glutSwapBuffers ();
+   		break;
 
-void displayVazioCheio(void)
-{
+   		case 'c':
 
+   		// Limpar todos os pixels
+    	glClear (GL_COLOR_BUFFER_BIT);
 
-   // Limpar todos os pixels
-    glClear (GL_COLOR_BUFFER_BIT);
+    	// Desenhar a linha x do eixo
+    	glBegin(GL_LINES);
 
-    // Desenhar a linha x do eixo
-    glBegin(GL_LINES);
+	      glColor3f(0.0, 1.0, 0.0);
+	      glVertex3f(-1.0, 0.0, 0.0);
+      		glVertex3f(1.0, 0.0, 0.0);
 
-      glColor3f(0.0, 1.0, 0.0);
-      glVertex3f(-1.0, 0.0, 0.0);
-      glVertex3f(1.0, 0.0, 0.0);
+	    glEnd();
 
-   glEnd();
+	    // Desenhar a linha y do eixo
+	    glBegin(GL_LINES);
 
-   // Desenhar a linha y do eixo
-   glBegin(GL_LINES);
+	       glColor3f(0.0, 1.0, 0.0);
+	       glVertex3f(0.0, -1.0, 0.0);
+	       glVertex3f(0.0, 1.0, 0.0);
 
-      glColor3f(0.0, 1.0, 0.0);
-      glVertex3f(0.0, -1.0, 0.0);
-      glVertex3f(0.0, 1.0, 0.0);
+	    glEnd();
 
-   glEnd();
+	    glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
 
-   glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
+	    // Desenhar um triângulo vermelho preenchido
+	    glBegin(GL_TRIANGLES);
 
-   // Desenhar um triângulo vermelho preenchido
-   glBegin(GL_TRIANGLES);
-
-      glColor3f (1.0, 0.0, 0.0);
-      glVertex3f (0.0, 0.0, 0.0);
-      glVertex3f (-0.5, 0.0, 0.0);
-      glVertex3f (-0.25, -0.5, 0.0);
+	       glColor3f (1.0, 0.0, 0.0);
+	       glVertex3f (0.0, 0.0, 0.0);
+	       glVertex3f (-0.5, 0.0, 0.0);
+	       glVertex3f (-0.25, -0.5, 0.0);
 
 
-   glEnd();
+	    glEnd();
 
-   glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+ 	    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-   // Desenhar um triangulo vermelho vazio
-   glBegin(GL_TRIANGLES);
+ 	    // Desenhar um triangulo vermelho vazio
+   	    glBegin(GL_TRIANGLES);
 
-      glColor3f (1.0, 0.0, 0.0);
-      glVertex3f (0.0, 0.0, 0.0);
-      glVertex3f (0.5, 0.0, 0.0);
-      glVertex3f (0.25, 0.5, 0.0);
-
-
-   glEnd();
-
-   
-   glutSwapBuffers ();
-}
-
-void displayPoligono(void)
-{
+	       glColor3f (1.0, 0.0, 0.0);
+	       glVertex3f (0.0, 0.0, 0.0);
+	       glVertex3f (0.5, 0.0, 0.0);
+	       glVertex3f (0.25, 0.5, 0.0);
 
 
-   // Limpar todos os pixels
-    glClear (GL_COLOR_BUFFER_BIT);
+	    glEnd();
 
-    // Desenhar a linha x do eixo
-    glBegin(GL_LINES);
+	   
+	    glutSwapBuffers ();
+	    break;
 
-      glColor3f(0.0, 1.0, 0.0);
-      glVertex3f(-1.0, 0.0, 0.0);
-      glVertex3f(1.0, 0.0, 0.0);
+	    case 'd':
 
-   glEnd();
+	    // Limpar todos os pixels
+    	glClear (GL_COLOR_BUFFER_BIT);
 
-   // Desenhar a linha y do eixo
-   glBegin(GL_LINES);
+    	// Desenhar a linha x do eixo
+    	glBegin(GL_LINES);
 
-      glColor3f(0.0, 1.0, 0.0);
-      glVertex3f(0.0, -1.0, 0.0);
-      glVertex3f(0.0, 1.0, 0.0);
+      		glColor3f(0.0, 1.0, 0.0);
+      		glVertex3f(-1.0, 0.0, 0.0);
+      		glVertex3f(1.0, 0.0, 0.0);
 
-   glEnd();
+   		glEnd();
 
-   glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-   //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-   // Desenhar um triângulo vermelho
-   glBegin(GL_LINE_STRIP);
+   		// Desenhar a linha y do eixo
+   		glBegin(GL_LINES);
+
+      		glColor3f(0.0, 1.0, 0.0);
+      		glVertex3f(0.0, -1.0, 0.0);
+      		glVertex3f(0.0, 1.0, 0.0);
+
+   		glEnd();
+
+   		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+   		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+   		// Desenhar um triângulo vermelho
+   		glBegin(GL_LINE_STRIP);
 
 
-      glColor3f  (0.0, 0.0, 0.0);
-      glVertex3f (-0.25, 0.5, 0.0);
-      glVertex3f (-0.5, 0.0, 0.0);
-      glVertex3f (-0.25, -0.5, 0.0);
-      glVertex3f (0.25, -0.5, 0.0);
-      glVertex3f (0.5, 0.0, 0.0);
-      glVertex3f (0.25, 0.5, 0.0);
+      		glColor3f  (0.0, 0.0, 0.0);
+      		glVertex3f (-0.25, 0.5, 0.0);
+      		glVertex3f (-0.5, 0.0, 0.0);
+      		glVertex3f (-0.25, -0.5, 0.0);
+      		glVertex3f (0.25, -0.5, 0.0);
+      		glVertex3f (0.5, 0.0, 0.0);
+      		glVertex3f (0.25, 0.5, 0.0);
       
 
 
-   glEnd();
+   		glEnd();
 
    
-   glutSwapBuffers ();
+   		glutSwapBuffers ();
+   		break;
+
+
+	}
+
+   
 }
+
+
+
 
 void init (void)
 {
@@ -243,8 +246,8 @@ void keyboard(unsigned char key, int x, int y)
       case 'A':
       case 'a':
          
-         glutDisplayFunc(displayCheio);
-         glutIdleFunc(displayCheio);
+         var = 'a';
+         glutPostRedisplay();
 
          break;
 
@@ -252,23 +255,24 @@ void keyboard(unsigned char key, int x, int y)
       case 's':
 
          
-         glutDisplayFunc(displayVazio);
-         glutIdleFunc(displayVazio);
+         var = 'b';
+         glutPostRedisplay();
          
       break;
 
       case 'D':
       case 'd':
          
-         glutDisplayFunc(displayVazioCheio);
-         glutIdleFunc(displayVazioCheio);
+         var = 'c';
+         glutPostRedisplay();
+
       break;
 
       case 'F':
       case 'f':
          
-         glutDisplayFunc(displayPoligono);
-         glutIdleFunc(displayPoligono);
+         var = 'd';
+         glutPostRedisplay();
 
       break;
 
