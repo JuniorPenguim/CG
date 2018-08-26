@@ -6,7 +6,7 @@ float angle = 0, scale = 1.0;
 float xtrans = 0, ytrans = 0, ztrans = 0;
 char var;
 
-
+//yeah
 
 void display(void);
 void init (void);
