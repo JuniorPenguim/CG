@@ -41,8 +41,8 @@ void display(void)
 
 		glClear (GL_COLOR_BUFFER_BIT);
 
-    	// Desenhar a linha x do eixo
-    	glBegin(GL_LINES);
+    		// Desenhar a linha x do eixo
+    		glBegin(GL_LINES);
 
       		glColor3f(0.0, 1.0, 0.0);
       		glVertex3f(-1.0, 0.0, 0.0);
