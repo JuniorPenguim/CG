@@ -31,8 +31,7 @@ int main(int argc, char** argv)
 
 
 
-// É a rotina chamada automaticamente sempre que a
-// janela ou parte dela precisa ser redesenhada
+
 void display(void)
 {
 
