@@ -9,9 +9,89 @@
 void display(void);
 void init (void);
 void desenhaTabuleiro();
+void idle();
 
+float desiredFPS = 60;
 float positx = -2.5;
 float posity = -2.5;
+float varx = -2.5;
+float vary = -2.5;
+float dirx = 1.0f;
+float diry = 1.0f;
+
+void idle()
+{
+    float t, desiredFrameTime, frameTime;
+    static float tLast = 0.0;
+
+    // Get elapsed time
+    t = glutGet(GLUT_ELAPSED_TIME);
+    // convert milliseconds to seconds
+    t /= 1000.0;
+
+    // Calculate frame time
+    frameTime = t - tLast;
+    // Calculate desired frame time
+    desiredFrameTime = 1.0 / (float) (desiredFPS);
+
+    // Check if the desired frame time was achieved. If not, skip animation.
+    if( frameTime <= desiredFrameTime)
+        return;
+
+    /*
+     *UPDATE ANIMATION VARIABLES
+     */
+    
+    if(varx != positx)
+    {
+         if((positx <= 0) && (positx < varx))
+         {            
+            varx-=dirx*0.01;
+         }
+         if((positx <= 0) && (positx > varx))
+         {
+          varx+=dirx*0.01;
+         }
+         if ((positx >= 0) && (positx > varx))
+         {
+            varx+=dirx*0.01;
+         }
+         if((positx >= 0) && (positx < varx))
+         {
+          varx-=dirx*0.01;
+         }
+
+    } 
+    
+    if(vary != posity)
+    {
+         if((posity <= 0) && (posity < vary))
+         {            
+            vary-=diry*0.01;
+         }
+         if((posity <= 0) && (posity > vary))
+         {
+          vary+=diry*0.01;
+         }
+         if ((posity >= 0) && (posity > vary))
+         {
+            vary+=diry*0.01;
+         }
+         if((posity >= 0) && (posity < vary))
+         {
+            vary-=diry*0.01;
+         }
+
+    }
+
+    
+
+    /* Update tLast for next time, using static local variable */
+    tLast = t;
+
+    glutPostRedisplay();
+
+}
 
 void mouse(int button, int state, int x, int y)
 {
@@ -45,6 +125,7 @@ int main(int argc, char** argv)
    glutInitWindowPosition (100, 100);
    glutCreateWindow ("tabuleiro");
    glutMouseFunc( mouse );
+   glutIdleFunc( idle);
    init ();
    glutDisplayFunc(display);
    glutMainLoop();
@@ -110,7 +191,7 @@ void display(void)
    glPushMatrix();
 
    glColor3f(1.0, 0.0, 0.0);
-   glTranslatef(positx, posity, 0.0);
+   glTranslatef(varx, vary, 0.0);
    glutSolidSphere(0.5, 50, 50);
  
    glPopMatrix();
