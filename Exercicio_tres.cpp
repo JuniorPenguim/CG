@@ -1,13 +1,3 @@
-/*
-  Name:        05_viewport
-  Copyright:   Version 0.1
-  Author:      Rodrigo Luis de Souza da Silva
-  Edited:	   Bruno José Dembogurski
-  Update:      10/07/2018
-  Date:        15/10/2013
-  Description: Testing more than one viewports
-*/
-
 #include <GL/glut.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,15 +12,13 @@ void  display(void);
 void  keyboard(unsigned char key, int x, int y);
 void  init(void);
 
-//////////////////////////////////////////////////
-// Main Function
 int main(int argc, char** argv)
 {
    glutInit(&argc, argv);
    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH );
    glutInitWindowSize ((int)largura,(int)altura);
    glutInitWindowPosition (20,20);
-   glutCreateWindow ("Viewport Test");
+   glutCreateWindow ("Viewport completo");
    init ();
    glutDisplayFunc(display);  // Eh quem ira chamar todo o restante das funçoes
    glutKeyboardFunc(keyboard);
@@ -38,8 +26,7 @@ int main(int argc, char** argv)
    return 0;
 }
 
-//////////////////////////////////////////////////
-// Functions
+
 
 // Inicializa opengl
 void init(void)
@@ -79,17 +66,17 @@ void DesenhaObjetos()
 
    glColor3f(0.0, 1.0, 0.0);
    glBegin(GL_POLYGON);
-   	  glVertex3f(2.0, -2.0, 0.0);
-   	  glVertex3f(8.0, -2.0, 0.0);
-   	  glVertex3f(2.0, -8.0, 0.0);
+        glVertex3f(2.0, -2.0, 0.0);
+        glVertex3f(8.0, -2.0, 0.0);
+        glVertex3f(2.0, -8.0, 0.0);
    glEnd();
 
    glColor3f(1.0, 1.0, 1.0);
    glBegin(GL_LINE_STRIP);
-   	  glVertex3f(-2.0, -2.0, 0.0);
-   	  glVertex3f(-8.0, -2.0, 0.0);
-   	  glVertex3f(-2.0, -8.0, 0.0);
-  	  glVertex3f(-8.0, -8.0, 0.0);
+        glVertex3f(-2.0, -2.0, 0.0);
+        glVertex3f(-8.0, -2.0, 0.0);
+        glVertex3f(-2.0, -8.0, 0.0);
+     glVertex3f(-8.0, -8.0, 0.0);
    glEnd();
 }
 
@@ -146,9 +133,6 @@ void display(void)
    DesenhaEixos();
    DesenhaObjetos();
 
-
-
-
    glutSwapBuffers();
    glutPostRedisplay();
 }
@@ -163,4 +147,3 @@ void keyboard(unsigned char key, int x, int y)
    }
    glutPostRedisplay();
 }
-
