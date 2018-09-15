@@ -6,8 +6,6 @@ float angle = 0, scale = 1.0;
 float xtrans = 0, ytrans = 0, ztrans = 0;
 char var;
 
-//yeah
-
 void display(void);
 void init (void);
 void desenhaEixos();
@@ -20,17 +18,20 @@ int main(int argc, char** argv)
    glutInitDisplayMode (GLUT_DOUBLE|GLUT_DEPTH|GLUT_RGB);
    glutInitWindowSize (300, 300);
    glutInitWindowPosition (100, 100);
-   glutCreateWindow ("hello");
+   glutCreateWindow ("Quad Transform com teclas");
    init ();
    glutKeyboardFunc(keyboard);
    glutSpecialFunc(specialkeyboard);
+   printf("Pressione 'R' para rotacionar no sentido anti-horário e 'r' no sentido horário.\n");
+   printf("Pressione '+' para aumentar a escala e '-' para diminuir.\n");
+   printf("Utilize as teclas direcionais para movimentar o cubo.\n");
+   printf("Pressione ESC para sair.\n");
    glutDisplayFunc(display);
    glutMainLoop();
    
 
    return 0;
 }
-
 
 void desenhaEixos()
 {
@@ -70,13 +71,9 @@ void specialkeyboard(int key, int x, int y)
 
             xtrans = xtrans + 5;
             glutPostRedisplay();
-         break;
-
-
-         
+         break;         
 
       }
-
 
 }
 
@@ -88,7 +85,6 @@ void keyboard(unsigned char key, int x, int y)
    {
 
       case '+':
-
          
          scale = scale * 2;
          glutPostRedisplay();            
@@ -122,13 +118,7 @@ void keyboard(unsigned char key, int x, int y)
 
       break;
 
-      
-
-
    }
-
-
-
 
 }
 
@@ -147,13 +137,10 @@ void display(void)
       glRotatef(angle, 0.0, 0.0, 1.0);
       glScalef(scale, scale, scale);
       glutWireCube(10);
-   glPopMatrix();
-   
+   glPopMatrix();   
 
    glutSwapBuffers ();
-   //glutPostRedisplay();
-
-   
+      
 }
 
 void init (void)
