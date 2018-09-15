@@ -1,13 +1,3 @@
-/*
-  Name:        quad_transform.cpp
-  Copyright:   Version 0.1
-  Author:      Rodrigo Luis de Souza da Silva
-  Edited:	   Bruno José Dembogurski
-  Update:      10/07/2018
-  Date:        16/09/2004
-  Description: Transformations using of OpenGL commands
-*/
-
 #include <GL/glut.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -33,7 +23,6 @@ void idle();
 void showMenu();
 void mouse(int button, int state, int x, int y);
 
-
 void idle()
 {
     float t, desiredFrameTime, frameTime;
@@ -52,16 +41,13 @@ void idle()
     // Check if the desired frame time was achieved. If not, skip animation.
     if( frameTime <= desiredFrameTime)
         return;
-
         
     if((varx == xtrans) && (vary == ytrans) && (var_angle == angle) && ((var_scale == scale)))
     {
-    	if(enableMenu) showMenu();
+      if(enableMenu) showMenu();
     }
-    
-
-    
-	if(varx != xtrans)
+        
+   if(varx != xtrans)
     {
          if((xtrans <= 0) && (xtrans < varx))
          {            
@@ -69,7 +55,7 @@ void idle()
          }
          if((xtrans <= 0) && (xtrans > varx))
          {
-         	varx+=dirx*1.0;
+            varx+=dirx*1.0;
          }
          if ((xtrans >= 0) && (xtrans > varx))
          {
@@ -77,7 +63,7 @@ void idle()
          }
          if((xtrans >= 0) && (xtrans < varx))
          {
-         	varx-=dirx*1.0;
+            varx-=dirx*1.0;
          }
 
     } 
@@ -90,7 +76,7 @@ void idle()
          }
          if((ytrans <= 0) && (ytrans > vary))
          {
-         	vary+=diry*1.0;
+            vary+=diry*1.0;
          }
          if ((ytrans >= 0) && (ytrans > vary))
          {
@@ -98,38 +84,30 @@ void idle()
          }
          if((ytrans >= 0) && (ytrans < vary))
          {
-         	vary-=diry*1.0;
+            vary-=diry*1.0;
          }
 
     } 
-
-
     
     if(var_angle > angle)
     {
-    	var_angle-=dir_angle*1.0;    	
+      var_angle-=dir_angle*1.0;     
     }
     if(var_angle < angle)
     {
-    	var_angle+=dir_angle*1.0;
+      var_angle+=dir_angle*1.0;
     }
 
     if(var_scale > scale)
     {
-    	var_scale-=dir_scale*1.0;
+      var_scale-=dir_scale*1.0;
     }
     if(var_scale < scale)
     {
-    	var_scale+=dir_scale*1.0;
-    }
-   
-
-   
+      var_scale+=dir_scale*1.0;
+    }   
 
     /* Update tLast for next time, using static local variable */
-
-
-
     tLast = t;
 
     glutPostRedisplay();
@@ -182,8 +160,6 @@ void showMenu()
       break;
    }
 
-
-
 }
 
 void desenhaEixos()
@@ -215,14 +191,8 @@ void display(void)
       glutWireCube(10);
    glPopMatrix();
 
-
-
    glutSwapBuffers ();
    glutPostRedisplay();
-
-   
-
-
 
 }
 
@@ -246,7 +216,7 @@ int main(int argc, char** argv)
    glutInitDisplayMode (GLUT_DOUBLE|GLUT_DEPTH|GLUT_RGB);
    glutInitWindowSize (300, 300);
    glutInitWindowPosition (100, 100);
-   glutCreateWindow ("hello");
+   glutCreateWindow ("Quad Transform final");
    glutMouseFunc( mouse );
    glutIdleFunc( idle);
    init ();
