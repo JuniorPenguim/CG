@@ -3,9 +3,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-//yeah
-
-
 void display(void);
 void init (void);
 void desenhaTabuleiro();
@@ -82,9 +79,7 @@ void idle()
             vary-=diry*0.01;
          }
 
-    }
-
-    
+    }    
 
     /* Update tLast for next time, using static local variable */
     tLast = t;
@@ -97,8 +92,7 @@ void mouse(int button, int state, int x, int y)
 {
 
    y = 150 - y; 
-   x = x - 150;
-   
+   x = x - 150;   
 
    if(button == GLUT_LEFT_BUTTON)
    {
@@ -107,13 +101,10 @@ void mouse(int button, int state, int x, int y)
          printf("\nBotao esquerdo pressionado na posicao [%d, %d].", x*2, y*2);
          positx = floor((float)((x*2.0)/100.0)) + 0.5;
          posity = floor((float)((y*2.0)/100.0)) + 0.5;
-         printf("\n%f , %f", positx, posity);
-
-         
+         printf("\n%f , %f", positx, posity);         
       }
 
    }
-
 
 }
 
