@@ -17,9 +17,12 @@ Exercicio 7: Desenho de um braço móvel divido em 3 partes.
 
 Exercicio 8: Desenho de um braço móvel com garra.
 
-Exercicio 9: Descanso de tela feito com triângulos
+Exercicio 9: Descanso de tela feito com triângulos.
 
-Exercicio 10: Desenho da trajetória de uma Bouncing Ball
+Exercicio 10: Desenho da trajetória de uma Bouncing Ball.
 
+Exercicio 11: Desenho de um tabuleiro com cubo em 3D com movimento (utilizando função look at).
+
+Execicio 12: Desenho de um tabuleiro com cubo em 3D com movimento suave (utilização função look at).
 
 OBS: Para compilar, utilize as flags: -lglut, -lGLU, -lGL
