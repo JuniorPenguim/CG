@@ -23,6 +23,6 @@ Exercicio 10: Desenho da trajetória de uma Bouncing Ball.
 
 Exercicio 11: Desenho de um tabuleiro com cubo em 3D com movimento (utilizando função look at).
 
-Execicio 12: Desenho de um tabuleiro com cubo em 3D com movimento suave (utilização função look at).
+Exercicio 12: Desenho de um tabuleiro com cubo em 3D com movimento suave (utilização função look at).
 
 OBS: Para compilar, utilize as flags: -lglut, -lGLU, -lGL
