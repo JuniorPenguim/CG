@@ -25,4 +25,6 @@ Exercicio 11: Desenho de um tabuleiro com cubo em 3D com movimento (utilizando f
 
 Exercicio 12: Desenho de um tabuleiro com cubo em 3D com movimento suave (utilização função look at).
 
+Exercício 15: Cálculo de desenho de linhas com Bresenham. 
+
 OBS: Para compilar, utilize as flags: -lglut, -lGLU, -lGL
