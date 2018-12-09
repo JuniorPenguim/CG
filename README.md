@@ -27,4 +27,6 @@ Exercicio 12: Desenho de um tabuleiro com cubo em 3D com movimento suave (utiliz
 
 Exercício 15: Cálculo de desenho de linhas com Bresenham. 
 
+Exercicio 16: Desenho de curva com Algoritmo do Ponto Médio.
+
 OBS: Para compilar, utilize as flags: -lglut, -lGLU, -lGL
