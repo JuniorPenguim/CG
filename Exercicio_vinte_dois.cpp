@@ -1,13 +1,3 @@
-/*
-  Name:        Shader Example
-  Copyright:   Version 0.1
-  Author:      Rodrigo Luis de Souza da Silva
-  Edited:	   Bruno José Dembogurski
-  Update:      10/07/2018
-  Last Update: 02/03/2018
-  Description: Basic Shader Example. Basically Old OpenGL with Shaders
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
