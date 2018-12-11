@@ -29,6 +29,8 @@ Exercicio 15 (Aula 10): Cálculo de desenho de linhas com Bresenham.
 
 Exercicio 16 (Aula 10): Desenho de curva com Algoritmo do Ponto Médio.
 
+Exercicio 19 (Aula 12): Observar queda ou aumento de desempenho. Alterar o posicionamento das esferas e alterar reflexão dos triângulos.
+
 Exercicio 20 (Aula 13): Gerar triângulo reto com 2 pontos no lado esquerdo.
 
 Exercicio 21 (Aula 13): Mudar a cor do triângulo gerado no Exercicio 20.
