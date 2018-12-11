@@ -25,6 +25,8 @@ Exercicio 11 (Aula 6): Desenho de um tabuleiro com cubo em 3D com movimento (uti
 
 Exercicio 12 (Aula 6): Desenho de um tabuleiro com cubo em 3D com movimento suave (utilização função look at).
 
+Exercicio 13 (Aula 8): Criação de 3 luzes de cores diferentes que podem ser movimentadas, ligadas e desligadas em uma linha demarcada.
+
 Exercicio 15 (Aula 10): Cálculo de desenho de linhas com Bresenham. 
 
 Exercicio 16 (Aula 10): Desenho de curva com Algoritmo do Ponto Médio.
