@@ -31,6 +31,8 @@ Exercicio 16 (Aula 10): Desenho de curva com Algoritmo do Ponto Médio.
 
 Exercicio 17 (Aula 11): Criação de um cubo com textura.
 
+Exercicio 18 (Aula 11): Criação de um cilindro com textura.
+
 Exercicio 19 (Aula 12): Observar queda ou aumento de desempenho. Alterar o posicionamento das esferas e alterar reflexão dos triângulos.
 
 Exercicio 20 (Aula 13): Gerar triângulo reto com 2 pontos no lado esquerdo.
